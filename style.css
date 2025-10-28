@@ -1,0 +1,80 @@
+body {
+    background-color: #FFF0F5;
+    color: #5C3A54; 
+
+    /* 2. Terapkan font Poppins ke semua teks sebagai default */
+    font-family: 'Poppins', sans-serif; 
+
+    text-align: center;
+}
+
+header {
+    padding: 50px 20px;
+}
+
+header h1 {
+    /* 3. Khusus buat H1, kita pake Playfair Display */
+    font-family: 'Playfair Display', serif; 
+
+    font-size: 3rem; /* Kita gedein dikit biar dramatis */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ... (kode CSS kamu yang lama) ... */
+
+
+/* ===== STYLE UNTUK BAGIAN ABOUT ME ===== */
+
+#about-me {
+    /* Kasih jarak dari header */
+    margin-top: 60px;
+    padding: 40px 20px;
+}
+
+.about-container {
+    /* Ini trik sulapnya biar foto & teks sejajar! */
+    display: flex;
+    align-items: center; /* Biar vertikalnya di tengah */
+    justify-content: center; /* Biar horizontalnya di tengah halaman */
+    gap: 50px; /* Jarak antara foto dan teks */
+
+    /* Biar rapi, kita batasi lebarnya */
+    max-width: 900px;
+    margin: 0 auto; /* Trik biar wadahnya ke tengah */
+}
+
+.profile-picture {
+    /* Ini trik biar fotonya jadi bulet sempurna */
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Biar fotonya ga gepeng */
+
+    /* Kasih bingkai lucu */
+    border: 6px solid #FFC1E3; /* Warna pink permen yang soft */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bio {
+    /* Biar teksnya ga nempel di kiri */
+    text-align: left;
+}
+
+.bio h2 {
+    /* Pake font judul kita yang keren */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #D87093; /* Warna Pale Violet Red, biar lebih stand out */
+}
+
+.bio p {
+    /* Kasih jarak antar paragraf */
+    margin-bottom: 15px;
+    line-height: 1.6; /* Biar spasinya enak dibaca */
+}
