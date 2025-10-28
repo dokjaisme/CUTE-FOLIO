@@ -78,3 +78,76 @@ header p {
     margin-bottom: 15px;
     line-height: 1.6; /* Biar spasinya enak dibaca */
 }
+
+/* ===== STYLE UNTUK BAGIAN PROJECTS ===== */
+
+#projects {
+    padding: 60px 20px;
+    background-color: #FAF5F7; /* Warna pink yang lebih pucat buat bedain section */
+}
+
+#projects h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #D87093;
+}
+
+.project-gallery {
+    display: flex; /* Bikin kartu-kartunya sejajar */
+    justify-content: center; /* Posisikan di tengah */
+    flex-wrap: wrap; /* Kalau kartunya banyak, otomatis turun ke bawah */
+    gap: 40px; /* Jarak antar kartu */
+    max-width: 1200px; /* Batasi lebar maksimal galeri */
+    margin: 0 auto; /* Biar galerinya ke tengah */
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 15px; /* Ujungnya tumpul, biar soft */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Bayangan halus */
+    width: 350px; /* Lebar setiap kartu */
+    overflow: hidden; /* Biar gambar ga keluar dari ujung tumpul */
+    text-align: left; /* Teks di dalem kartu rata kiri */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus */
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Efek kartu ngangkat pas disentuh mouse */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-family: 'Lora', serif; /* Pake Lora biar keliatan beda & manis */
+    font-size: 1.5rem;
+    margin: 20px 20px 10px 20px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 20px 20px 20px; /* Atur jarak paragraf */
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #D87093;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 20px 20px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #C1547A; /* Warna jadi sedikit lebih gelap pas disentuh */
+}
