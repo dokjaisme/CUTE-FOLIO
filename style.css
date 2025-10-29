@@ -151,3 +151,104 @@ header p {
 .project-link:hover {
     background-color: #C1547A; /* Warna jadi sedikit lebih gelap pas disentuh */
 }
+
+/* ... (kode project-link:hover) ... */
+
+
+/* ===== STYLE UNTUK BAGIAN SKILLS ===== */
+
+#skills {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #D87093;
+}
+
+.skills-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; /* Jarak antar ikon */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column; /* Ikon di atas, teks di bawah */
+    align-items: center;
+    width: 100px; /* Lebar area per skill */
+}
+
+.skill-item img {
+    width: 80px; /* Ukuran ikon */
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Animasi ikon */
+}
+
+.skill-item img:hover {
+    transform: scale(1.1) rotate(5deg); /* Ikonnya jadi sedikit goyang & membesar */
+}
+
+.skill-item p {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #5C3A54;
+}
+
+/* ===== BAGIAN RESPONSIVE DESIGN ===== */
+/* Peraturan ini berlaku untuk layar dengan lebar MAKSIMAL 768px (Tablet & HP) */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. Atur Ulang Font Biar Gak Kegedean */
+    header h1 {
+        font-size: clamp(2.5rem, 8vw, 3rem);
+        
+        /* ---> TAMBAHIN BARIS INI <--- */
+        word-break: break-word; 
+    }
+
+    header p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        padding: 0 10px;
+    }
+
+    .bio h2,
+    #projects h2 {
+        font-size: 2rem; /* Ukuran judul section */
+    }
+
+    /* 2. Ubah Layout "About Me" jadi Tumpuk Atas-Bawah */
+    .about-container {
+        flex-direction: column; /* Ini kuncinya! Dari sejajar jadi tumpuk */
+        text-align: center; /* Teks bionya jadi ke tengah */
+        gap: 30px; /* Kurangin jarak antara foto dan bio */
+    }
+
+    .bio {
+        text-align: center; /* Pastikan semua teks di bio ke tengah */
+    }
+
+    .profile-picture {
+        width: 200px; /* Kecilin dikit fotonya */
+        height: 200px;
+    }
+
+    /* 3. Atur Ulang Galeri Project */
+    .project-gallery {
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 90%; /* Lebar kartu dibikin hampir penuh */
+        max-width: 350px; /* Tapi jangan lebih lebar dari ini */
+    }
+
+}
