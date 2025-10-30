@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-<body>
+
+</head> <body>
 
     <header>
         <h1>✧･ﾟ: *✧･ﾟ:* eeeeeeeNJI?! *:･ﾟ✧*:･ﾟ✧</h1>
@@ -21,9 +22,7 @@
     <main>
         <section id="about-me">
             <div class="about-container">
-
-                <img src="assets/pics/aboutme2.jpeg" alt="Foto profil kamu" class="profile-picture">
-
+                <img src="assets/pics/aboutme2.jpeg" alt="A cute picture of Emu Otori" class="profile-picture">
                 <div class="bio">
                     <h2>a little bit about me... ୨୧</h2>
                     <p>
@@ -38,49 +37,56 @@
 
         <section id="projects">
             <h2>my little creations... ୨୧</h2>
-            <div class="project-gallery">
-                <div class="project-card">
-                    <img src="assets/pics/projects1.jpeg" alt="Tampilan Proyek 1">
-                    <h3>Cute-Folio Ini Sendiri!</h3>
-                    <p>Website portofolio interaktif yang dibuat dengan HTML & CSS murni, terinspirasi dari estetika coquette dan Emu Otori. ♡</p>
-                    <a href="https://github.com/dokjaisme/CUTE-FOLIO" class="project-link" target="_blank">Lihat Kode ↗</a>
+            <div class="card-stack-container">
+                <div class="stack-decorations">
+                    <span class="deco-sparkle sparkle-1">✦</span>
+                    <span class="deco-sparkle sparkle-2">✧</span>
+                    <span class="deco-sparkle sparkle-3">✨</span>
+                    <span class="deco-sparkle sparkle-4">⊹</span>
+                 </div>
+                <div class="card-stack">
+                    <div class="project-card">
+                        <img src="assets/pics/projects1.jpeg" alt="Tampilan Proyek 1">
+                        <h3>Cute-Folio Ini Sendiri!</h3>
+                        <p>Website portofolio interaktif yang dibuat dengan HTML & CSS murni...</p>
+                        <a href="https://github.com/dokjaisme/CUTE-FOLIO" class="project-link" target="_blank">Lihat Kode ↗</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/pics/projects2.jpeg" alt="Tampilan Proyek 2">
+                        <h3>Aplikasi Kalkulator Saintifik</h3>
+                        <p>Tugas kuliah mata pelajaran X. Sebuah kalkulator yang dibuat dengan...</p>
+                        <a href="#" class="project-link" target="_blank">Lihat Kode ↗</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/pics/projects3.jpeg" alt="Tampilan Proyek 3">
+                        <h3>Sistem Informasi Perpustakaan</h3>
+                        <p>Sebuah aplikasi web untuk mengelola data buku dan anggota perpustakaan...</p>
+                        <a href="#" class="project-link" target="_blank">Lihat Kode ↗</a>
+                    </div>
                 </div>
+                
+                <div class="card-controls">
+                    <button id="nextCardBtn">➞</button>
 
-                <div class="project-card">
-                    <img src="assets/pics/projects2.jpeg" alt="Tampilan Proyek 2">
-                    <h3>Aplikasi Kalkulator Saintifik</h3>
-                    <p>Tugas kuliah mata pelajaran X. Sebuah kalkulator yang dibuat dengan  ... yang bisa melakukan operasi kompleks.</p>
-                    <a href="#" class="project-link" target="_blank">Lihat Kode ↗</a>
-                </div> 
-            </div>
-        </section>
-
-        <section id="skills">
             <h2>my magic spells... ୨୧</h2>
-
             <div class="skills-gallery">
-
                 <div class="skill-item">
                     <img src="assets/icon/html5-icon.png" alt="HTML5 icon">
                     <p>HTML5</p>
                 </div>
-
                 <div class="skill-item">
                     <img src="assets/icon/css3-icon.png" alt="CSS3 icon">
                     <p>CSS3</p>
                 </div>
-
                 <div class="skill-item">
                     <img src="assets/icon/js-icon.png" alt="JavaScript icon">
                     <p>JavaScript</p>
                 </div>
-
                 <div class="skill-item">
                     <img src="assets/icon/php-icon.png" alt="PHP icon">
                     <p>PHP</p>
                 </div>
-
-                </div>
+            </div>
         </section>
 
         <section id="contact">
@@ -88,18 +94,13 @@
             <div class="form-divider">∗ ⎯⎯⎯ ୨୧ ⎯⎯⎯ ∗</div>
             <div class="form-container">
                 <form action="https://formspree.io/f/mkgprekw" method="POST">
-                    
                     <label for="name">Your Name:</label>
                     <input type="text" id="name" name="name" required>
-
                     <label for="email">Your Email:</label>
                     <input type="email" id="email" name="email" required>
-
                     <label for="message">Your Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
-
                     <button type="submit">Send with magic! ✨</button>
-
                 </form>
             </div>
         </section>
@@ -108,5 +109,5 @@
     <footer>
         <p>© 2025 enji's digital dollhouse ♡ | Made with ♡ by enji</p>
     </footer>
-    </body>
+</body>
 </html>

@@ -1,12 +1,10 @@
 body {
     background: linear-gradient(to bottom, #FFF0F5, #FAF5F7);
     color: #5C3A54; 
-
-    /* 2. Terapkan font Poppins ke semua teks sebagai default */
     font-family: 'Poppins', sans-serif; 
     text-align: center;
     position: relative;
-    overflow-x: hidden; /* Biar ga muncul scrollbar horizontal */
+    overflow-x: hidden;
 }
 
 header {
@@ -14,10 +12,8 @@ header {
 }
 
 header h1 {
-    /* 3. Khusus buat H1, kita pake Playfair Display */
     font-family: 'Playfair Display', serif; 
-
-    font-size: 3rem; /* Kita gedein dikit biar dramatis */
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
@@ -26,58 +22,45 @@ header p {
     font-style: italic;
 }
 
-/* ... (kode CSS kamu yang lama) ... */
-
-
 /* ===== STYLE UNTUK BAGIAN ABOUT ME ===== */
 
 #about-me {
-    /* Kasih jarak dari header */
     margin-top: 60px;
     padding: 40px 20px;
 }
 
 .about-container {
-    /* Ini trik sulapnya biar foto & teks sejajar! */
     display: flex;
-    align-items: center; /* Biar vertikalnya di tengah */
-    justify-content: center; /* Biar horizontalnya di tengah halaman */
-    gap: 50px; /* Jarak antara foto dan teks */
-
-    /* Biar rapi, kita batasi lebarnya */
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
     max-width: 900px;
-    margin: 0 auto; /* Trik biar wadahnya ke tengah */
+    margin: 0 auto;
 }
 
 .profile-picture {
-    /* Ini trik biar fotonya jadi bulet sempurna */
     border-radius: 50%;
     width: 250px;
     height: 250px;
-    object-fit: cover; /* Biar fotonya ga gepeng */
-
-    /* Kasih bingkai lucu */
-    border: 6px solid #FFC1E3; /* Warna pink permen yang soft */
+    object-fit: cover;
+    border: 6px solid #FFC1E3;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .bio {
-    /* Biar teksnya ga nempel di kiri */
     text-align: left;
 }
 
 .bio h2 {
-    /* Pake font judul kita yang keren */
     font-family: 'Playfair Display', serif;
     margin-bottom: 20px;
     font-size: 2.2rem;
-    color: #D87093; /* Warna Pale Violet Red, biar lebih stand out */
+    color: #D87093;
 }
 
 .bio p {
-    /* Kasih jarak antar paragraf */
     margin-bottom: 15px;
-    line-height: 1.6; /* Biar spasinya enak dibaca */
+    line-height: 1.6;
 }
 
 /* ===== STYLE UNTUK BAGIAN PROJECTS ===== */
@@ -94,46 +77,83 @@ header p {
     color: #D87093;
 }
 
-.project-gallery {
-    display: flex; /* Bikin kartu-kartunya sejajar */
-    justify-content: center; /* Posisikan di tengah */
-    flex-wrap: wrap; /* Kalau kartunya banyak, otomatis turun ke bawah */
-    gap: 40px; /* Jarak antar kartu */
-    max-width: 1200px; /* Batasi lebar maksimal galeri */
-    margin: 0 auto; /* Biar galerinya ke tengah */
+/* ===== STYLE UNTUK TUMPUKAN KARTU PROJECT ===== */
+
+.card-stack-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
 }
 
-.project-card {
+.stack-decorations {
+    position: absolute;
+    width: 600px;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none; 
+}
+
+.deco-sparkle {
+    position: absolute;
+    color: #FFC1E3;
+    font-size: 2rem;
+    opacity: 0.6;
+    animation: gentleBob 5s ease-in-out infinite;
+}
+
+.sparkle-1 { top: 5%; left: 10%; animation-delay: 0s; }
+.sparkle-2 { top: 20%; right: 5%; font-size: 1.5rem; animation-delay: 1s; }
+.sparkle-3 { bottom: 25%; left: 15%; font-size: 2.5rem; animation-delay: 2.5s; }
+.sparkle-4 { bottom: 10%; right: 20%; animation-delay: 4s; }
+
+@keyframes gentleBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.card-stack {
+    position: relative;
+    width: 350px;
+    height: 480px;
+    margin-bottom: 30px;
+}
+
+/* PENTING: Semua style .project-card sekarang jadi #projects .project-card */
+#projects .project-card {
+    position: absolute;
+    left: 0;
+    top: 0;
     background-color: #fff;
-    border-radius: 15px; /* Ujungnya tumpul, biar soft */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Bayangan halus */
-    width: 350px; /* Lebar setiap kartu */
-    overflow: hidden; /* Biar gambar ga keluar dari ujung tumpul */
-    text-align: left; /* Teks di dalem kartu rata kiri */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 350px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
 }
 
-.project-card:hover {
-    transform: translateY(-10px); /* Efek kartu ngangkat pas disentuh mouse */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.project-card img {
+#projects .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.project-card h3 {
-    font-family: 'Lora', serif; /* Pake Lora biar keliatan beda & manis */
+#projects .project-card h3 {
+    font-family: 'Lora', serif;
     font-size: 1.5rem;
     margin: 20px 20px 10px 20px;
 }
 
-.project-card p {
+#projects .project-card p {
     font-size: 0.95rem;
     line-height: 1.5;
-    margin: 0 20px 20px 20px; /* Atur jarak paragraf */
+    margin: 0 20px 20px 20px;
 }
 
 .project-link {
@@ -149,7 +169,29 @@ header p {
 }
 
 .project-link:hover {
-    background-color: #C1547A; /* Warna jadi sedikit lebih gelap pas disentuh */
+    background-color: #C1547A;
+}
+
+.card-controls {
+    text-align: center;
+}
+
+#nextCardBtn {
+    background-color: transparent;
+    color: #D87093;
+    border: 2px solid #D87093;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#nextCardBtn:hover {
+    background-color: #D87093;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 /* ===== STYLE UNTUK BAGIAN SKILLS ===== */
@@ -170,7 +212,7 @@ header p {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px; /* Jarak antar ikon */
+    gap: 40px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -179,18 +221,18 @@ header p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px; /* Lebar wadah ikon */
+    width: 150px;
 }
 
 .skill-item img {
-    width: 120px; /* Ukuran ikon yang lebih besar */
-    height: 120px; /* Harus sama dengan width biar kotak */
+    width: 120px;
+    height: 120px;
     margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
 .skill-item img:hover {
-    transform: scale(1.1) rotate(5deg); /* Ikonnya jadi sedikit goyang & membesar */
+    transform: scale(1.1) rotate(5deg);
 }
 
 .skill-item p {
@@ -203,32 +245,17 @@ header p {
 
 body span {
     position: absolute;
-    /* Kita gak pake background di sini lagi, karena diatur JS */
     pointer-events: none;
     z-index: 9999;
-    
-    /* INI TRIKNYA: Bikin bentuk bintang 4 sisi! */
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-
-    /* Animasinya kita kasih nama baru */
     animation: sparkleAnimation 1s forwards;
     opacity: 0;
 }
 
-/* Animasi baru yang lebih ajaib */
 @keyframes sparkleAnimation {
-    0% {
-        opacity: 0;
-        transform: scale(0) rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2) rotate(180deg);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0) rotate(360deg);
-    }
+    0% { opacity: 0; transform: scale(0) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+    100% { opacity: 0; transform: scale(0) rotate(360deg); }
 }
 
 /* ===== STYLE UNTUK FORM KONTAK ===== */
@@ -247,9 +274,9 @@ body span {
 
 .form-divider {
     text-align: center;
-    margin-bottom: 20px; /* Jarak ke form */
+    margin-bottom: 20px;
     font-size: 1.2rem;
-    color: #D87093; /* Warna pink tua */
+    color: #D87093;
 }
 
 .form-container {
@@ -260,7 +287,7 @@ body span {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 2px dashed #FFC1E3; /* Bingkai dashed pink emu */
+    border: 2px dashed #FFC1E3;
 }
 
 .form-container label {
@@ -268,18 +295,18 @@ body span {
     margin-bottom: 8px;
     font-weight: bold;
     text-align: left;
-    font-family: 'Lora', serif; /* <-- TAMBAHKAN INI */
+    font-family: 'Lora', serif;
 }
 
 .form-container input,
 .form-container textarea {
     width: 100%;
-    padding: 12px 5px; /* Padding samping dikecilin dikit */
-    margin-bottom: 25px; /* Jarak bawah ditambahin biar lebih lega */
-    background-color: transparent; /* Hapus background putihnya */
-    border: none; /* Hapus semua border lama */
-    border-bottom: 2px solid #FFC1E3; /* CUMA PAKAI BORDER BAWAH */
-    border-radius: 0; /* Hapus lengkungan sudut */
+    padding: 12px 5px;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #FFC1E3;
+    border-radius: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s ease;
@@ -316,56 +343,38 @@ footer {
     padding: 25px;
     text-align: center;
     font-size: 0.9rem;
-    color: #A08C99; /* Warna yang lebih soft dari teks utama */
+    color: #A08C99;
 }
 
 /* ===== BAGIAN RESPONSIVE DESIGN ===== */
-/* Peraturan ini berlaku untuk layar dengan lebar MAKSIMAL 768px (Tablet & HP) */
 
 @media screen and (max-width: 768px) {
-
-    /* 1. Atur Ulang Font Biar Gak Kegedean */
     header h1 {
         font-size: clamp(2.5rem, 8vw, 3rem);
-        
-        /* ---> TAMBAHIN BARIS INI <--- */
         word-break: break-word; 
     }
-
     header p {
         font-size: clamp(1rem, 4vw, 1.2rem);
         padding: 0 10px;
     }
-
     .bio h2,
     #projects h2 {
-        font-size: 2rem; /* Ukuran judul section */
+        font-size: 2rem;
     }
-
-    /* 2. Ubah Layout "About Me" jadi Tumpuk Atas-Bawah */
     .about-container {
-        flex-direction: column; /* Ini kuncinya! Dari sejajar jadi tumpuk */
-        text-align: center; /* Teks bionya jadi ke tengah */
-        gap: 30px; /* Kurangin jarak antara foto dan bio */
-    }
-
-    .bio {
-        text-align: center; /* Pastikan semua teks di bio ke tengah */
-    }
-
-    .profile-picture {
-        width: 200px; /* Kecilin dikit fotonya */
-        height: 200px;
-    }
-
-    /* 3. Atur Ulang Galeri Project */
-    .project-gallery {
+        flex-direction: column;
+        text-align: center;
         gap: 30px;
     }
-
-    .project-card {
-        width: 90%; /* Lebar kartu dibikin hampir penuh */
-        max-width: 350px; /* Tapi jangan lebih lebar dari ini */
+    .bio {
+        text-align: center;
     }
-
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+    }
+    /* Aturan responsive untuk kartu project */
+    .card-stack {
+        transform: scale(0.9); /* Kecilin dikit tumpukannya di HP */
+    }
 }
