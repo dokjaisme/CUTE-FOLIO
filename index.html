@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <body>
 
     <header>
@@ -63,12 +61,12 @@
             <div class="skills-gallery">
 
                 <div class="skill-item">
-                    <img src="https://via.placeholder.com/80" alt="HTML5 icon">
+                    <img src="assets/icon/html5-icon.png" alt="HTML5 icon">
                     <p>HTML5</p>
                 </div>
 
                 <div class="skill-item">
-                    <img src="https://via.placeholder.com/80" alt="CSS3 icon">
+                    <img src="assets/icon/css3-icon.png" alt="CSS3 icon">
                     <p>CSS3</p>
                 </div>
 
@@ -78,12 +76,37 @@
                 </div>
 
                 <div class="skill-item">
-                    <img src="https://via.placeholder.com/80" alt="Laravel icon">
-                    <p>Laravel</p>
+                    <img src="assets/icon/php-icon.png" alt="PHP icon">
+                    <p>PHP</p>
                 </div>
 
                 </div>
         </section>
+
+        <section id="contact">
+            <h2>send me a letter... ୨୧ <span class="letter-stamp">💌</span></h2>
+            <div class="form-divider">∗ ⎯⎯⎯ ୨୧ ⎯⎯⎯ ∗</div>
+            <div class="form-container">
+                <form action="https://formspree.io/f/mkgprekw" method="POST">
+                    
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send with magic! ✨</button>
+
+                </form>
+            </div>
+        </section>
     </main>
+    <script src="script.js"></script>
+    <footer>
+        <p>© 2025 enji's digital dollhouse ♡ | Made with ♡ by enji</p>
+    </footer>
     </body>
 </html>

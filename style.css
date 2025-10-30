@@ -1,11 +1,12 @@
 body {
-    background-color: #FFF0F5;
+    background: linear-gradient(to bottom, #FFF0F5, #FAF5F7);
     color: #5C3A54; 
 
     /* 2. Terapkan font Poppins ke semua teks sebagai default */
     font-family: 'Poppins', sans-serif; 
-
     text-align: center;
+    position: relative;
+    overflow-x: hidden; /* Biar ga muncul scrollbar horizontal */
 }
 
 header {
@@ -83,7 +84,6 @@ header p {
 
 #projects {
     padding: 60px 20px;
-    background-color: #FAF5F7; /* Warna pink yang lebih pucat buat bedain section */
 }
 
 #projects h2 {
@@ -152,9 +152,6 @@ header p {
     background-color: #C1547A; /* Warna jadi sedikit lebih gelap pas disentuh */
 }
 
-/* ... (kode project-link:hover) ... */
-
-
 /* ===== STYLE UNTUK BAGIAN SKILLS ===== */
 
 #skills {
@@ -180,16 +177,16 @@ header p {
 
 .skill-item {
     display: flex;
-    flex-direction: column; /* Ikon di atas, teks di bawah */
+    flex-direction: column;
     align-items: center;
-    width: 100px; /* Lebar area per skill */
+    width: 150px; /* Lebar wadah ikon */
 }
 
 .skill-item img {
-    width: 80px; /* Ukuran ikon */
-    height: 80px;
+    width: 120px; /* Ukuran ikon yang lebih besar */
+    height: 120px; /* Harus sama dengan width biar kotak */
     margin-bottom: 15px;
-    transition: transform 0.3s ease; /* Animasi ikon */
+    transition: transform 0.3s ease;
 }
 
 .skill-item img:hover {
@@ -200,6 +197,126 @@ header p {
     font-weight: bold;
     font-size: 1rem;
     color: #5C3A54;
+}
+
+/* ===== STYLE UNTUK BUBBLE PERI (SPARKLE) CURSOR ===== */
+
+body span {
+    position: absolute;
+    /* Kita gak pake background di sini lagi, karena diatur JS */
+    pointer-events: none;
+    z-index: 9999;
+    
+    /* INI TRIKNYA: Bikin bentuk bintang 4 sisi! */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+    /* Animasinya kita kasih nama baru */
+    animation: sparkleAnimation 1s forwards;
+    opacity: 0;
+}
+
+/* Animasi baru yang lebih ajaib */
+@keyframes sparkleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+    }
+}
+
+/* ===== STYLE UNTUK FORM KONTAK ===== */
+
+#contact {
+    padding: 60px 20px;
+}
+
+#contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #D87093;
+}
+
+.form-divider {
+    text-align: center;
+    margin-bottom: 20px; /* Jarak ke form */
+    font-size: 1.2rem;
+    color: #D87093; /* Warna pink tua */
+}
+
+.form-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px dashed #FFC1E3; /* Bingkai dashed pink emu */
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Lora', serif; /* <-- TAMBAHKAN INI */
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 12px 5px; /* Padding samping dikecilin dikit */
+    margin-bottom: 25px; /* Jarak bawah ditambahin biar lebih lega */
+    background-color: transparent; /* Hapus background putihnya */
+    border: none; /* Hapus semua border lama */
+    border-bottom: 2px solid #FFC1E3; /* CUMA PAKAI BORDER BAWAH */
+    border-radius: 0; /* Hapus lengkungan sudut */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #D87093;
+    box-shadow: 0 0 10px rgba(216, 112, 147, 0.4); 
+}
+
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #D87093;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #C1547A;
+    transform: scale(1.02);
+}
+
+/* ===== STYLE UNTUK FOOTER ===== */
+footer {
+    padding: 25px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #A08C99; /* Warna yang lebih soft dari teks utama */
 }
 
 /* ===== BAGIAN RESPONSIVE DESIGN ===== */
